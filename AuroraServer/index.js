@@ -137,7 +137,7 @@ app.post('/login', async (req, res) => {
     const token = jwt.sign({ id: admin._id }, "ADAM");
 
     // Send success response with JWT token
-    res.json({ token, adminId: admin._id });
+    res.json({ token, adminId: admin._id, admin_name: admin.username });
 });
 app.get('/users/:id', async (req, res) => {
     const userId = req.params.id;
